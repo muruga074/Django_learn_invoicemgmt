@@ -1,0 +1,5 @@
+User.objects.create_superuser(
+    username='superadmin',
+    email='muruganandan1993@gmail.com',
+    password='Admin@2025'
+)
