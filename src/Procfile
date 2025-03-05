@@ -1,1 +1,1 @@
-web gunicorn InvoiceMgmt.wsgi:application --log-file -
+web: python manage.py migrate && gunicorn InvoiceMgmt.wsgi:application

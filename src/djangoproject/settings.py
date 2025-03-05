@@ -57,6 +57,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',#add for railway hosting
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -157,11 +158,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR /"invoicemgmt/static",
-    #os.path.join(BASE_DIR,"invoicemgmt/static"),
+    #BASE_DIR /"invoicemgmt/static",
+    os.path.join(BASE_DIR,"invoicemgmt/static"),
     #os.path.join(BASE_DIR,"static"),
 ]
-
+#add for railway hosting
+STATICSTORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEBUG = False
 #STATIC_ROOT = os.path.join(BASE_DIR,'assets')
